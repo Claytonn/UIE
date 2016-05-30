@@ -1,9 +1,10 @@
 # UIE - User Intent Events
 #### Extended browser events for common page actions.
 
-#### Usage
-
-** UIE Starts On Document Ready **
+#### UIE Events
+- mouseLeftPage
+- mouseOverExitingLink
+- mouseClickExitingLink
 
 #### Example Settings
 ```

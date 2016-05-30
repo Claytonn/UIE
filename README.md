@@ -2,9 +2,9 @@
 #### Extended browser events for common page actions.
 
 #### Events
-- mouseLeftPage - User's mouse exited the page or browser.
-- mouseOverExitingLink - User moused over an external link.
-- mouseClickExitingLink	- User clicked an extenral link.
+- mouseLeftPage
+- mouseOverExitingLink
+- mouseClickExitingLink
 
 #### Example Settings
 ```

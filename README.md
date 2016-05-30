@@ -1,7 +1,7 @@
 # UIE - User Intent Events
 #### Extended browser events for common page actions.
 
-#### UIE Events
+#### Events
 - mouseLeftPage
 - mouseOverExitingLink
 - mouseClickExitingLink

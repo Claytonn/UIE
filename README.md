@@ -35,5 +35,6 @@
 ```
 #### To Do
 
+- [ ] Extend Settings
 - [ ] Improve Data Provided To Events
 - [ ] Cross Browser Testing

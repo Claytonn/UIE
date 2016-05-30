@@ -35,4 +35,4 @@
 #### To Do
 
 - [ ] Improve Data Provided To Events
-- [ ] Cross Browsers Testing
+- [ ] Cross Browser Testing

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UIE - User Intent Events</title>	
+	<script type="text/javascript" src="uie.js"></script> 
+</head>
+<body>
+	<h1>UIE - User Intent Events</h1>
+	<p>Extended browser events for common page actions.</p>
+
+	<h4> Link Examples </h4>
+	<ul>
+		<li><a href="#">Local</a></li>
+		<li><a href="http://twitter.com/claytonnlambert" target="_blank">External (New Window)</a></li>
+		<li><a href="http://twitter.com/claytonnlambert">External</a></li>
+	</ul>
+
+	<script type="text/javascript">
+
+		// SETTINGS & CALLBACKS DEMO
+
+		UIE.settings({
+			events: {
+				mouseLeftPage: {
+					enabled: true,
+					callback: function(event, exitSide){
+						console.log("Settings Callback: Mouse Left Page/Browser on the " + exitSide + " side");
+					}
+				},
+				mouseOverExitingLink: {
+					enabled: true,
+					callback: function(event, opensInNewTab){
+						console.log("Settings Callback: Mouse Over Exiting Link - Opens In New Tab? (" + opensInNewTab + ")");
+					}
+				},
+				mouseClickExitingLink: {
+					enabled: true,
+					preventDefault: true,
+					callback: function(event, opensInNewTab){
+						console.log("Settings Callback: Mouse Clicked Exiting Link - Opens In New Tab? (" + opensInNewTab + ")");
+					}
+				}
+			}
+		});
+
+
+		// UIE EVENT DEMO
+
+		// Demo Helper Function
+		function attachUieListener(eventName, fn){
+			document.addEventListener && document.addEventListener(eventName, fn, false) || document.attachEvent && document.attachEvent(eventName, fn, false);
+		}
+
+		// Mouse Left Page Event Listener
+		attachUieListener('mouseLeftPage', function(event){
+			console.log("Event Listener: Mouse Left Page on the " + event.detail.exitSide + " side");
+		});
+
+		// Mouse Over Exiting Link Listener
+		attachUieListener('mouseOverExitingLink', function(event){
+			console.log("Event Listener: Mouse Over Exiting Link - Opens In New Tab? (" + event.detail.opensInNewTab + ")");
+		});
+
+		// Mouse Click Exiting Link Listener
+		attachUieListener('mouseClickExitingLink', function(event){
+			console.log("Event Listener: Mouse Click Exiting Link - Opens In New Tab? (" + event.detail.opensInNewTab + ")");
+		});
+	</script>
+</body>
+
+</html>
